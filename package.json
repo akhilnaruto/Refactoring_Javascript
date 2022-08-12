@@ -1,14 +1,19 @@
 {
-  "name": "refactoring",
+  "name": "refactoring_javascript",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhilnaruto/Refactoring_Javascript.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "jsonfile": "^5.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/akhilnaruto/Refactoring_Javascript/issues"
+  },
+  "homepage": "https://github.com/akhilnaruto/Refactoring_Javascript#readme"
 }
