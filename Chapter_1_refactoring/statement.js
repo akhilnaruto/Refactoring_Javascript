@@ -27,6 +27,14 @@ function volumeCreditsFor(aPerformance) {
     return result;
 }
 
+function totalAmount(){
+    let totalAmount = 0;
+    for (let perf of invoice.performances) {
+        totalAmount += amountFor(perf);
+    }
+    return totalAmount;
+}
+
 function amountFor(aPerformance) {
     let result = 0;
     switch (playFor(aPerformance).type) {
@@ -51,17 +59,14 @@ function amountFor(aPerformance) {
 }
 
 function statement(invoice) {
-    let totalAmount = 0;
-
     let result = `Statement for ${invoice.customer}\n`;
 
     for (let perf of invoice.performances) {
         //print the line for this order
         result += `  ${playFor(perf).name} : ${usd(amountFor(perf) / 100)} (${perf.audience} seats) \n`;
-        totalAmount += amountFor(perf);
     }
 
-    result += `Amount owed is ${usd(totalAmount / 100)} \n`;
+    result += `Amount owed is ${usd(totalAmount() / 100)} \n`;
     result += ` You earned ${totalVolumeCredits()} credits \n`;
     return result;
 }
